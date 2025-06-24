@@ -9,7 +9,4 @@
 */
 
 libname sicoob base "&caminho_libs/sicoob";
-
-data sicoob.carros;
-	set sashelp.cars;
-run;
+libname sicoobsp base "&caminho_libs/sicoobsp";
