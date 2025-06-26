@@ -9,15 +9,18 @@
 */
 %include "/opt/sas/Workshop/Git/oc1/macros/macro_vars.sas";
 %include "&caminho/src/libraries.sas";
+%include "&caminho/macros/importar_dados.sas";
 
-proc import datafile="&caminho/output/DM1.xlsx" dbms=xlsx
-	out=sicoob.vendas replace;
-	sheet=vendas;
-run;
-	
 
-proc import datafile="&caminho/output/DM1.xlsx" dbms=xlsx
-	out=sicoob.produtos replace;
-	sheet=produtos;
-run;
+%importar_dados(vendas, vendas);
+%importar_dados(produtos, produtos);
+%importar_dados(deptos, deptos);
+%importar_dados(grupos, grupos);
+%importar_dados(cores, cores);
+%importar_dados(tamanhos, tamanhos);
+%importar_dados(estados, estados);
+%importar_dados(regioes, Regiões);
+
+
+%include "&caminho/src/libraries.sas";
 	
