@@ -25,6 +25,7 @@ by CodProduto;
 run;
 
 data sicoobsp.vendasproduto;
-	merge work.vendas_produto work.produtos_produto;
+	merge work.vendas_produto(in=a) work.produtos_produto(in=b);
 	by CodProduto;
+	if (a and b);
 run;
